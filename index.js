@@ -6,10 +6,10 @@ import dotenv from 'dotenv';
 import helmet from 'helmet';
 import morgan from "morgan";
 
-import clientRoutes from "/routes/client.js";
-import generalRoutes from "/routes/general.js";
-import managmentRoutes from "/routes/managment.js";
-import salesRoutes from "/routes/sales.js";
+import clientRoutes from "./routes/client.js";
+import generalRoutes from "./routes/general.js";
+import managmentRoutes from "./routes/managment.js";
+import salesRoutes from "./routes/sales.js";
 
 
 
@@ -34,5 +34,12 @@ app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/managment", managmentRoutes);
 app.use("/sales", salesRoutes);
+
+
+// mongoose setup
+
+const PORT = process.env.PORT || 9000;
+app.listen(PORT,()=> console.log('server start'))
+
 
 
